@@ -1,4 +1,4 @@
-# -*-
+# -*- coding:utf-8 -*-
 
 """
     17 - Faça um Programa para uma loja de tintas. O programa deverá pedir o 
@@ -15,3 +15,55 @@
         valores para cima, isto é, considere latas cheias.
 """
 
+area = float (input("Digita a área a ser pintada em m²: "))
+
+litros = area / 6
+
+latas = (litros / 18)
+print ("Latas ", latas)
+galoes = litros / 3.6
+print ("Galoes ", galoes)
+
+
+
+valorLatas = latas * 80
+valorGaloes = galoes * 25
+
+print ("\nQuantidade de litros necessários: %.2f litros" % litros)
+
+#situação 1 - comprar apenas latas
+print ("\nSão necessárias %.2f de lata(s)" % latas)
+print ("\nPreço R$ %.2f" % valorLatas)
+
+#situação 2 - comprar apenas galões de tinta
+print ("\nSão necessárias %.2f de galão(ões)" % galoes)
+print ("\nPreço R$ %.2f" % valorGaloes)
+
+#Para evitar desperdício
+
+"""
+tamanho = float(input('Entre com o tamanho da área: '))
+
+litros = tamanho / 6
+latas = litros / 18
+
+if(latas % 18 !=0):
+    latas += 1
+preco = latas * 80
+
+galoes = litros / 3.6
+if (galoes % 3.6 != 0):
+    galoes += 1
+preco2 = galoes * 25
+
+#mistura de latas e galoes
+misturaL = int(litros / 18.0)
+misturaG = int((litros - (misturaL * 18)) / 3.6)
+
+if ((litros - (misturaL * 18) % 3.6 != 0)):
+    misturaG += 1
+
+print('Apenas latas de 18 litros: %d' % latas)
+print('Apenas galões de 3.6 litros: %d' % galoes)
+print('Mistura: %d latas e %d galoes = %.2f' % (misturaL, misturaG, ((misturaL * 80) + (misturaG * 25))))
+"""

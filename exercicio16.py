@@ -9,13 +9,13 @@
     compradas e o preço total.
 """
 
-tamanhoDaArea = int(input("Digita a área a ser pintada em m²: "))
+area = int(input("Digita a área a ser pintada em m²: "))
 
-quantidadeLitros = int(tamanhoDaArea/3)
+litros = int(area/3)
 
-quantidadeLatas = quantidadeLitros / 18
+latas = litros / 18
 
-valor = quantidadeLatas * 80
+valor = latas * 80
 
 print ("Quantidade de litros por metros: ", quantidadeLitros)
 print ("Quantidade de latas a ser compradas: ", quantidadeLatas)

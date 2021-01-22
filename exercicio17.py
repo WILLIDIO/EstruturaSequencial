@@ -13,57 +13,40 @@
         misturar latas e galões, de forma que o desperdício de tinta 
         seja menor. Acrescente 10% de folga e sempre arredonde os 
         valores para cima, isto é, considere latas cheias.
+    
+    @author: William Lídio
+    @email: william.lidio19@gmail.com
 """
+# Importando uma função do python que arredonda valores para cima
+from math import ceil
 
-area = float (input("Digita a área a ser pintada em m²: "))
+area = int (input("\nDigita a área a ser pintada em m²: "))
 
+# Cálculo dos litros
 litros = area / 6
+print ("\nQuantidade de litros: %.2f" % litros)
 
+# Cálculo das latas e galões
 latas = (litros / 18)
-print ("Latas ", latas)
 galoes = litros / 3.6
-print ("Galoes ", galoes)
 
+# Calculando os preços
+valorLatas = ceil (latas) * 80
+valorGaloes = ceil (galoes) * 25
 
+print ("\n---Situação 1 e 2---\n")
+print ("Quantidade em latas: %.2f" % latas)
+print ("Quantidade em galões: %.2f" % galoes)
+# Imprimindo os preços
+print ("Preço das latas %.2f" % valorLatas)
+print ("Preço dos galões %.2f" % valorGaloes)
 
-valorLatas = latas * 80
-valorGaloes = galoes * 25
+resultado = valorLatas + (ceil(latas/5)*25)
 
-print ("\nQuantidade de litros necessários: %.2f litros" % litros)
+print ("\n---Situação 3---\n")
+# Dica 3.6 multiplicado por 5 dá 18
+print ("Você precisará de... ")
+print ("Quantidade de latas %.2f" % latas)
+print ("Quantidade de galões %d" % ceil(latas/5))
+print ("Isso custará ao todo: ", resultado, "R$ \n")
 
-#situação 1 - comprar apenas latas
-print ("\nSão necessárias %.2f de lata(s)" % latas)
-print ("\nPreço R$ %.2f" % valorLatas)
-
-#situação 2 - comprar apenas galões de tinta
-print ("\nSão necessárias %.2f de galão(ões)" % galoes)
-print ("\nPreço R$ %.2f" % valorGaloes)
-
-#Para evitar desperdício
-
-"""
-tamanho = float(input('Entre com o tamanho da área: '))
-
-litros = tamanho / 6
-latas = litros / 18
-
-if(latas % 18 !=0):
-    latas += 1
-preco = latas * 80
-
-galoes = litros / 3.6
-if (galoes % 3.6 != 0):
-    galoes += 1
-preco2 = galoes * 25
-
-#mistura de latas e galoes
-misturaL = int(litros / 18.0)
-misturaG = int((litros - (misturaL * 18)) / 3.6)
-
-if ((litros - (misturaL * 18) % 3.6 != 0)):
-    misturaG += 1
-
-print('Apenas latas de 18 litros: %d' % latas)
-print('Apenas galões de 3.6 litros: %d' % galoes)
-print('Mistura: %d latas e %d galoes = %.2f' % (misturaL, misturaG, ((misturaL * 80) + (misturaG * 25))))
-"""
